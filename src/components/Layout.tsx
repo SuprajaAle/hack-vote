@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link} from 'react-router-dom';
-import { Trophy,  BarChart3,  } from 'lucide-react';
+import { Trophy, BarChart3, Gavel, Award } from 'lucide-react';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -23,13 +23,32 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
               </div>
             </Link>
             
-            {/* Admin Link */}
-            <Link 
-              to="/admin" 
-              className="p-2 rounded-lg text-gray-600 hover:bg-gray-100 transition-colors"
-            >
-              <BarChart3 className="w-5 h-5" />
-            </Link>
+            {/* Navigation Links */}
+            <div className="flex items-center space-x-2">
+              <Link 
+                to="/judge" 
+                className="p-2 rounded-lg text-gray-600 hover:bg-gray-100 transition-colors"
+                title="Judge Voting"
+              >
+                <Gavel className="w-5 h-5" />
+              </Link>
+              
+              <Link 
+                to="/results" 
+                className="p-2 rounded-lg text-gray-600 hover:bg-gray-100 transition-colors"
+                title="Results"
+              >
+                <Award className="w-5 h-5" />
+              </Link>
+              
+              <Link 
+                to="/admin" 
+                className="p-2 rounded-lg text-gray-600 hover:bg-gray-100 transition-colors"
+                title="Admin"
+              >
+                <BarChart3 className="w-5 h-5" />
+              </Link>
+            </div>
           </div>
         </div>
       </nav>
